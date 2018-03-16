@@ -27,6 +27,7 @@ import           XMonad.Hooks.ManageDocks
 import           XMonad.Util.SpawnOnce
 
 import           XMonad.Actions.SpawnOn
+term = "urxvt"
 main = do
   --xmproc <- spawnPipe "xmobar"
   xsetroot <- spawnPipe "xsetroot -cursor_name left_ptr"
@@ -34,14 +35,14 @@ main = do
 --  compositor <- spawnPipe "compton --config ~/.compton"
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
   xmonad $ ewmh $ docks def
-      { manageHook = manageSpawn <+>  myManageHook <+>  manageHook def
+      { manageHook = manageSpawn <+>  myManageHook <+> manageHook def
 
       , workspaces = ["1","2","3","4","5","6","7","8","9"]
 
       , layoutHook = myLayoutHook
       , startupHook = myStartupHook
       , modMask = mod4Mask     -- Rebind Mod to the Windows key
-      , terminal    = "terminology"
+      , terminal    = "urxvt"
       , borderWidth = 2
       , normalBorderColor  = "#740054"
       , focusedBorderColor = "#b6a738"
@@ -73,8 +74,8 @@ myStartupHook = do
         --spawnOnce "compton --config ~/.compton"
         --spawnOnce  "cd ~/mynotes; and gitit"
         --spawnOn "1" "cd ~/mynotes && gitit && firefox http://localhost:5001"
-        spawnOn "7" "terminology -e alsamixer"
-        spawnOn "8" "terminology -e htop"
+        spawnOn "7" "urxvt -e alsamixer"
+        spawnOn "8" "urxvt -e htop"
         spawnOn "9" "feh -Z https://wiki.haskell.org/wikiupload/b/b8/Xmbindings.png"
         --spawnOnce "feh --bg-fill ~/mynotes/wikidata/dotfiles/resources/desktop.jpg"
         --spawnOnce "patchage"
@@ -95,18 +96,19 @@ myManageHook = composeAll
    ,  className =? "Pavucontrol"  --> doShift "5"
    , manageDocks
    ]
-   -- in a composeAll hook, you'd use: fmap ("VLC" `isInfixOf`) title --> doFloat
+   -- in a composeAll hook, you'd use: fmap ("VLC" `isInfixOf`)
+-- title --> doFloat
 
 myXPConfig :: XPConfig
 myXPConfig = def
-              { font              = "xft:M+ 1p:size=30:antialias=true"
+              { font              = "xft:M+ 1p:size=22:antialias=true"
                , fgColor           = "#b6a738"
                , bgColor           = "#94004c"
                , borderColor       = "#ffa738"
-               , height            = 40
+               , height            = 50
                , promptBorderWidth = 1
                --, autoComplete      = Just 100000
                , bgHLight          = "#f2004c"
                , fgHLight          = "#b6a738"
                , position          = Bottom
-             }
+}
