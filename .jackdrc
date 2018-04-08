@@ -1,0 +1,1 @@
+/run/current-system/sw/bin/jackd -R -P 95 -d alsa -d hw:PCH -n 2 -r 48000 -p 256

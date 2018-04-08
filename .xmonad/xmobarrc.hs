@@ -1,4 +1,4 @@
-Config { font = "xft:M+ 1p:size=20:antialias=true"
+Config { font = "xft:M+ 1p:size=15:antialias=true"
         , borderColor = "ffa738"
         , border = TopB
         , bgColor = "#94004c"

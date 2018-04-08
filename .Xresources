@@ -16,7 +16,7 @@ URxvt.saveLines:            3000
 URxvt.fading:               40
 
 !! Font list and Spacing
-URxvt.font:                 xft:Dejavu Sans Mono-16,\
+URxvt.font:                 xft:Dejavu Sans Mono-14,\
                             xft:IPAGothic
 URxvt.letterSpace:          -1
 !URxvt.lineSpace:            0
@@ -47,3 +47,11 @@ URxvt.colorUL:              [90]#83a598
 URxvt.scrollColor:          [90]#504945
 !URxvt.troughColor:          [90]#3C3836
 
+
+Xft.dpi: 155
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
