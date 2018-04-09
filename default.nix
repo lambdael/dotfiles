@@ -21,9 +21,10 @@ in
 mkHome {
   user = "lambdael";
   files = {
-	 ".xmonad/xmonad.hs" = "${dotfiles}/.xmonad/xmonad.hs";
-	 ".xmonad/xmobarrc.hs" = "${dotfiles}/.xmonad/xmobarrc.hs";
-	 ".xmonad/xmonad-session-rc" = "${dotfiles}/.xmonad/xmonad-session-rc";
-	 ".Xresources" = "${dotfiles}/.Xresources";
+    ".xmonad/xmonad.hs" = "${dotfiles}/.xmonad/xmonad.hs";
+    ".xmonad/xmobarrc.hs" = "${dotfiles}/.xmonad/xmobarrc.hs";
+    ".xmonad/xmonad-session-rc" = "${dotfiles}/.xmonad/xmonad-session-rc";
+    ".config/nixpkgs/config.nix" = "${dotfiles}/.config/nixpkgs/config.nix";
+    ".Xresources" = "${dotfiles}/.Xresources";
   };
 }
