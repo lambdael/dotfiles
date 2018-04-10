@@ -28,6 +28,7 @@ import           XMonad.Util.SpawnOnce
 
 import           XMonad.Actions.SpawnOn
 term = "urxvt"
+editor = "code"
 main = do
   --xmproc <- spawnPipe "xmobar"
   xsetroot <- spawnPipe "xsetroot -cursor_name left_ptr"
@@ -42,7 +43,7 @@ main = do
                        , layoutHook         = myLayoutHook
                        , startupHook        = myStartupHook
                        , modMask            = mod4Mask     -- Rebind Mod to the Windows key
-                       , terminal           = "urxvt"
+                       , terminal           = term
                        , borderWidth        = 2
                        , normalBorderColor  = "#740054"
                        , focusedBorderColor = "#b6a738"
