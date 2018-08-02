@@ -32,6 +32,7 @@ editor = "code"
 main = do
   --xmproc <- spawnPipe "xmobar"
   xsetroot <- spawnPipe "xsetroot -cursor_name left_ptr"
+  spawn "xrdb -merge .Xresources"
   --xsettingsd <- spawnPipe "xsettingsd"
 --  compositor <- spawnPipe "compton --config ~/.compton"
   xmproc   <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
