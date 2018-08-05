@@ -1,4 +1,6 @@
 import           System.IO
+import           Data.List
+
 import           XMonad
 import           XMonad.Actions.CycleWS
 
@@ -21,18 +23,21 @@ import           XMonad.Prompt.Shell
 import qualified XMonad.StackSet             as W
 import           XMonad.Util.EZConfig        (additionalKeys)
 import           XMonad.Util.Run             (spawnPipe)
-
-import           Data.List
-import           XMonad.Hooks.ManageDocks
 import           XMonad.Util.SpawnOnce
-
 import           XMonad.Actions.SpawnOn
+import           XMonad.Hooks.ManageDocks
 term = "urxvt"
-editor = "code"
+editor = "code -r"
+browser = "chromium"
+
+devScreen = "DEV"
+sysScreen = "SYS"
+helpScreen = "HELP"
 main = do
   --xmproc <- spawnPipe "xmobar"
   xsetroot <- spawnPipe "xsetroot -cursor_name left_ptr"
   spawn "xrdb -merge .Xresources"
+  --spawn "ibus-daemon -rdx"
   --xsettingsd <- spawnPipe "xsettingsd"
 --  compositor <- spawnPipe "compton --config ~/.compton"
   xmproc   <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
@@ -40,7 +45,7 @@ main = do
     $                ewmh
     $                docks def
                        { manageHook = manageSpawn <+> myManageHook <+> manageHook def
-                       , workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+                       , workspaces = ["1", "2", "3", devScreen, sysScreen, helpScreen]
                        , layoutHook         = myLayoutHook
                        , startupHook        = myStartupHook
                        , modMask            = mod4Mask     -- Rebind Mod to the Windows key
@@ -56,15 +61,16 @@ main = do
     `additionalKeys` [
         --((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; xset dpms force off")
                        ((controlMask, xK_Print), spawn "sleep 0.2; scrot -s")
-                     , ( (0, xK_Print)
-                       , spawn "scrot"
-                       )
+                       , ( (0, xK_Print), spawn "scrot")
+                       , ( (mod4Mask, xK_Return), spawn browser)
+                       , ( (mod4Mask, xK_b), spawn browser)
+                       , ( (mod4Mask .|. controlMask, xK_Return), spawn editor)
+                       , ( (mod4Mask , xK_e), spawn editor)
+                     
         -- Launch dmenu for launching applicatiton
 --      , ((mod4Mask, xK_p), spawn "exe=`dmenu_run -l 10 -fn 'Migu 1M:size=20'` && exec $exe")
                      , ((mod4Mask, xK_p), shellPrompt myXPConfig)
-                     , ( (mod4Mask .|. controlMask, xK_x)
-                       , shellPrompt myXPConfig
-                       )
+                     , ( (mod4Mask .|. controlMask, xK_x), shellPrompt myXPConfig)
                      , ((mod4Mask, xK_Up)   , windows W.focusUp)
                      , ((mod4Mask, xK_Down) , windows W.focusDown)
                      , ((mod4Mask, xK_Left) , prevWS)
@@ -84,9 +90,11 @@ myStartupHook = do
         --spawnOnce "compton --config ~/.compton"
         --spawnOnce  "cd ~/mynotes; and gitit"
         --spawnOn "1" "cd ~/mynotes && gitit && firefox http://localhost:5001"
-  spawnOn "7" "urxvt -e alsamixer"
-  spawnOn "8" "urxvt -e htop"
-  spawnOn "9" "feh -Z https://wiki.haskell.org/wikiupload/b/b8/Xmbindings.png"
+
+        
+  spawnOn devScreen editor
+  spawnOn sysScreen "urxvt -e htop"
+  spawnOn helpScreen "feh -Z https://wiki.haskell.org/wikiupload/b/b8/Xmbindings.png"
         --spawnOnce "feh --bg-fill ~/mynotes/wikidata/dotfiles/resources/desktop.jpg"
         --spawnOnce "patchage"
         --spawnOnce "pactl load-module module-jack-sink channels=2"
@@ -94,9 +102,9 @@ myStartupHook = do
 
 
 myLayoutHook =
-  onWorkspace "9" (avoidStruts (noBorders Full))
-    $   onWorkspace "8" (avoidStruts (noBorders Full))
-    $   onWorkspace "7" (avoidStruts (noBorders Full))
+  onWorkspace helpScreen (avoidStruts (noBorders Full))
+    $   onWorkspace sysScreen (avoidStruts (noBorders Full))
+    $   onWorkspace devScreen (avoidStruts (noBorders Full))
     -- $ onWorkspace "3" $ avoidStruts $ simplestFloat
     $   avoidStruts
           ( spacing
