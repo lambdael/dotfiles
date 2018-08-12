@@ -93,7 +93,7 @@ myStartupHook = do
 
         
   spawnOn devScreen editor
-  spawnOn sysScreen "urxvt -e htop"
+  spawnOn sysScreen "urxvt -e htop -t"
   spawnOn helpScreen "feh -Z https://wiki.haskell.org/wikiupload/b/b8/Xmbindings.png"
         --spawnOnce "feh --bg-fill ~/mynotes/wikidata/dotfiles/resources/desktop.jpg"
         --spawnOnce "patchage"
