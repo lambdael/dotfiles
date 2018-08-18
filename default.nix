@@ -3,7 +3,7 @@ with import <nixhome> { inherit stdenv; inherit pkgs; };
 let
   dotfiles = stdenv.mkDerivation {
     name = "lambdael-dotfiles";
-    src = /home/lambdael/projects/dotfiles;
+    src = /home/lambdael/mybook/dotfiles;
 /*
     src = fetchgit {
       url = "https://github.com/lambdael/dotfiles.git";

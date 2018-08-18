@@ -18,7 +18,7 @@
     "languageServerHaskell.useCustomHieWrapper": true,
     "languageServerHaskell.useCustomHieWrapperPath": "~/projects/devenv/hie-wrapper.sh",
     "git.enableSmartCommit": true,
-    "git.autofetch": true,
+    "git.autofetch": false,
     "gitlens.keymap": "chorded",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
