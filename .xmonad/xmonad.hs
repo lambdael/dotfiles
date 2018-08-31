@@ -26,7 +26,7 @@ import           XMonad.Util.Run             (spawnPipe)
 import           XMonad.Util.SpawnOnce
 import           XMonad.Actions.SpawnOn
 import           XMonad.Hooks.ManageDocks
-term = "urxvt"
+term = "termite"
 editor = "code -r"
 browser = "chromium"
 
@@ -39,7 +39,8 @@ main = do
   spawn "xrdb -merge .Xresources"
   --spawn "ibus-daemon -rdx"
   --xsettingsd <- spawnPipe "xsettingsd"
---  compositor <- spawnPipe "compton --config ~/.compton"
+  spawn "feh -Z --bg-fill https://raw.githubusercontent.com/NixOS/nixos-artwork/7ece5356398db14b5513392be4b31f8aedbb85a2/gnome/Gnome_Dark.png"
+  --compositor <- spawnPipe "compton"
   xmproc   <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
   xmonad
     $                ewmh
@@ -53,10 +54,13 @@ main = do
                        , borderWidth        = 2
                        , normalBorderColor  = "#740054"
                        , focusedBorderColor = "#b6a738"
-                       , logHook            = dynamicLogWithPP xmobarPP
-                         { ppOutput = hPutStrLn xmproc
-                         , ppTitle  = xmobarColor "#ad9200" "" . shorten 50
-                         }
+                       , logHook            = dynamicLogWithPP $ xmobarPP {
+                        --ppOutput = hPutStrLn h 
+                         ppOrder = \(ws:l:t:_) -> [ws,t,l]
+                        , ppOutput = hPutStrLn xmproc
+                        , ppTitle  = xmobarColor "#ad9200" "" . shorten 50
+                       }
+
                        }
     `additionalKeys` [
         --((mod4Mask .|. shiftMask, xK_z), spawn "xscreensaver-command -lock; xset dpms force off")
@@ -93,8 +97,8 @@ myStartupHook = do
 
         
   spawnOn devScreen editor
-  spawnOn sysScreen "urxvt -e htop -t"
-  spawnOn helpScreen "feh -Z https://wiki.haskell.org/wikiupload/b/b8/Xmbindings.png"
+  spawnOn sysScreen "termite -e \"htop -t\""
+  spawnOn helpScreen "pqiv -cft ~/test.png"
         --spawnOnce "feh --bg-fill ~/mynotes/wikidata/dotfiles/resources/desktop.jpg"
         --spawnOnce "patchage"
         --spawnOnce "pactl load-module module-jack-sink channels=2"
@@ -123,6 +127,13 @@ myManageHook = composeAll
   ]
    -- in a composeAll hook, you'd use: fmap ("VLC" `isInfixOf`)
 -- title --> doFloat
+myLogHook = dynamicLogWithPP $ xmobarPP {
+   --ppOutput = hPutStrLn h 
+   ppOrder = \(ws:l:t:_) -> [ws,t,l]
+ --  , ppOutput = hPutStrLn xmproc
+  -- , ppTitle  = xmobarColor "#ad9200" "" . shorten 50
+  }
+   
 
 myXPConfig :: XPConfig
 myXPConfig = def { font              = "xft:M+ 1p:size=16:antialias=true"

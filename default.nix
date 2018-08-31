@@ -25,6 +25,7 @@ mkHome {
     ".xmonad/xmobarrc.hs" = "${dotfiles}/.xmonad/xmobarrc.hs";
     ".xmonad/xmonad-session-rc" = "${dotfiles}/.xmonad/xmonad-session-rc";
     ".config/nixpkgs/config.nix" = "${dotfiles}/.config/nixpkgs/config.nix";
+    ".config/nixpkgs/home.nix" = "${dotfiles}/.config/nixpkgs/home.nix";
     ".config/Code/User" = "${dotfiles}/.config/Code/User";
     ".Xresources" = "${dotfiles}/.Xresources";
   };

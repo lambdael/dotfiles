@@ -63,7 +63,7 @@ XTerm*locale:                true
 XTerm*selectToClipboard:     true
 XTerm*faceName:              Monoid
 XTerm*faceNameDoublesize:    MigMix 2M
-XTerm*faceSize:              10
+XTerm*faceSize:              20
 xterm*ximFont:               MigMix 2M
 
 ! molokai color scheme
@@ -87,3 +87,4 @@ xterm*ximFont:               MigMix 2M
 !*color13:       #bb88dd
 !*color14:       #4eb4fa
 !*color15:       #d0d0d0
+

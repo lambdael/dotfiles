@@ -8,12 +8,12 @@
 # PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 
 # Configure X
-# xsetroot -cursor_name left_ptr &
-# xrdb -merge ~/.Xdefaults &
+xsetroot -cursor_name left_ptr &
+xrdb -merge ~/.Xdefaults &
 # setxkbmap -option "ctrl:nocaps" &
 
 # Start a window compositor. This ensures Google Chrome paints correctly.
-# xcompmgr -n &
+xcompmgr -n &
 
 # Start the system tray
 # tray &
@@ -32,6 +32,7 @@
 # pulseaudio --start --log-target=syslog &
 
 # gnome-session &
-# feh --bg-fill ~/mynotes/wikidata/dotfiles/resources/desktop.jpg &
+feh --bg-fill https://raw.githubusercontent.com/NixOS/nixos-artwork/5729ab16c6a5793c10a2913b5a1b3f59b91c36ee/ideas/grub-splash/grub-nixos-1.png &
 # cd ~/mynotes && gitit &
 
+exec xmonad
