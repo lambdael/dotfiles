@@ -1,10 +1,15 @@
 # dotfiles
 my dotfiles
 
-use nix-home
+use home-manager
 
     git clone https://github.com/lambdael/dotfiles.git
-    cp /dotfiles/default.nix ~/
-    nix-home
 
 
+
+  https://github.com/rycee/home-manager
+
+
+edit  [home.nix](./.config/nixpkgs/home.nix)
+
+    build.sh

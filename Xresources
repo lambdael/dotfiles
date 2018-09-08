@@ -16,8 +16,15 @@ URxvt.saveLines:            3000
 URxvt.fading:               40
 
 !! Font list and Spacing
-URxvt.font:                 xft:Dejavu Sans Mono-14,\
-                            xft:IPAGothic
+URxvt.font:                 xft:Source Code Pro 18,
+XTerm*faceName: xft:Source Code Pro 18 for Powerline,
+!! xURxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=18:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=18:antialias=true:hinting=true
+
+
+!!                             xft:IPAGothic, 
+!!                             xft:M+
+!!                            URxvt*font:xft:DejaVu\ Sans\ Mono:bold:pixelsize=14:antialias=true,!! !! xft:DejaVu\ Sans\ Mono\ for\ Powerline:bold:pixelsize=14:antialias=true
+
 URxvt.letterSpace:          -1
 !URxvt.lineSpace:            0
 
@@ -48,7 +55,7 @@ URxvt.scrollColor:          [90]#504945
 !URxvt.troughColor:          [90]#3C3836
 
 
-Xft.dpi: 155
+Xft.dpi: 96
 Xft.autohint: 0
 Xft.lcdfilter:  lcddefault
 Xft.hintstyle:  hintfull
@@ -58,33 +65,31 @@ Xft.rgba: rgb
 
 
 
-XTerm*termName:              xterm-256color
+!! XTerm*termName:              xterm-256color
 XTerm*locale:                true
 XTerm*selectToClipboard:     true
-XTerm*faceName:              Monoid
-XTerm*faceNameDoublesize:    MigMix 2M
-XTerm*faceSize:              20
-xterm*ximFont:               MigMix 2M
-
+!! XTerm*faceNameDoublesize:    MigMix 2M
+XTerm*faceSize:              18
+!! xterm*ximFont:               MigMix 2M
 ! molokai color scheme
 !
-!*background:    #101010
-!*foreground:    #d0d0d0
-!*cursorColor:   #d0d0d0
-!*color0:        #101010
-!*color1:        #960050
-!*color2:        #66aa11
-!*color3:        #c47f2c
-!*color4:        #30309b
-!*color5:        #7e40a5
-!*color6:        #3579a8
-!*color7:        #9999aa
-!*color8:        #303030
-!*color9:        #ff0090
-!*color10:       #80ff00
-!*color11:       #ffba68
-!*color12:       #5f5fee
-!*color13:       #bb88dd
-!*color14:       #4eb4fa
-!*color15:       #d0d0d0
+XTerm*background:    #103010
+XTerm*foreground:    #c0a030
+XTerm*cursorColor:   #d0d0d0
+XTerm*color0:        #101010
+XTerm*color1:        #960050
+XTerm*color2:        #66aa11
+XTerm*color3:        #c47f2c
+XTerm*color4:        #30309b
+XTerm*color5:        #7e40a5
+XTerm*color6:        #3579a8
+XTerm*color7:        #9999aa
+XTerm*color8:        #303030
+XTerm*color9:        #ff0090
+XTerm*color10:       #80ff00
+XTerm*color11:       #ffba68
+XTerm*color12:       #5f5fee
+XTerm*color13:       #bb88dd
+XTerm*color14:       #4eb4fa
+XTerm*color15:       #d0d0d0
 

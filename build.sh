@@ -27,7 +27,7 @@ echo "copy"
 echo "FROM $cfgSrcPath"
 echo "TO   $cfgTgtPath"
 
-cp -r $cfgSrcPath $cfgTgtPath 
+cp -pr $cfgSrcPath $cfgTgtPath 
 
 
 echo "rebuild"
