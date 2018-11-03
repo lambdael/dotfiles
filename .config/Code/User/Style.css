@@ -1,97 +1,40 @@
-html {
-  font-size: 100%;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
+@charset "UTF-8";
 
 body {
-  color: rgb(199, 145, 192);
-  font-family: 'M+', Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
-  font-size: 18px;
-  line-height: 1.5em;
-  padding: 1em;
-  margin: auto;
-  max-width: 42em;
-  background: #1c2216;
+  background: rgb(250, 255, 235);
+  color: #333;
+  font-weight: 500;
+  font-size: 16pt;
+  border-left: .3em solid #f04aff;
+
 }
 
-a {
-  color: #f6b0ff;
-  text-decoration: none;
-}
 
-a:visited {
-  color: #bf65c2;
-}
-
-a:hover {
-  color: rgb(250, 117, 255);
-}
-
-a:active {
-  color: #fa00e5;
-}
-
-a:focus {
-  outline: thin dotted;
-}
-
-a:hover,
-a:active {
-  outline: 0;
-}
-
-::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #000;
-}
-
-::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #000;
-}
-
-a::-moz-selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
-
-a::selection {
-  background: rgba(255, 255, 0, 0.3);
-  color: #0645ad;
-}
-
-p {
-  margin: 1em 0;
-}
-
-img {
-  max-width: 100%;
-}
-
+/* 見出し関係のスタイル */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: normal;
-  color: rgb(251, 175, 235);
-  line-height: 1em;
-}
+  color: rgb(100, 0, 79);
+  line-height: 1.4;
+  font-weight: 800;
+  border-left: .3em solid #f04aff;
+  padding:  .4em 0 .2em .7em;
+  letter-spacing: .07em;
 
-h4,
-h5,
-h6 {
-  font-weight: bold;
+
+
 }
 
 h1 {
-  font-size: 2em;
-}
+  /* margin: 1.8em 0 .8em; */
 
+  font-size: 1.7em;
+}
 h2 {
+  /* margin: 1.8em 0 .8em; */
   font-size: 1.5em;
 }
 
@@ -104,195 +47,329 @@ h4 {
 }
 
 h5 {
+  font-size: 1.1em;
+  font-weight: 600;
+
+}
+h6 {
+  font-size: 1em;
+  font-weight: 600;
+  padding:  .2em 0 .2em .7em;
+
+  line-height: 1.2;
+
+}
+
+
+/* リンク */
+a {
+  text-decoration: underline;
+}
+
+a:link {
+  color: #0076e0;
+}
+
+a:visited {
+  color: #39f;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #009cd5;
+}
+
+
+/* 画像 */
+img {
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* 各要素基本マージンと文字色 */
+figure,
+dl,
+ol,
+ul,
+p,
+pre,
+table {
+  color: rgb(12, 27, 21);
+  margin-bottom: 1.5em;
+
+}
+
+
+/* リスト関連 */
+li {
+  margin-bottom: .5em;
+}
+
+dl dt {
+  color: rgb(204, 50, 50);
   font-size: 1em;
 }
 
-h6 {
-  font-size: 0.9em;
+dl dd {
+  margin-bottom: 1em;
+  padding-bottom: 1.4em;
+  border-bottom: .1em solid #f1f1f1;
+
+}
+dl dd:last-of-type {
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
-blockquote {
-  color: #666666;
-  margin: 0;
-  padding-left: 3em;
-  border-left: 0.5em rgb(218, 122, 110) solid;
+
+/* テーブル */
+table th {
+  width: 25%;
+  padding: 10px 35px 10px 0;
+  text-align: left;
+  border-bottom: 30px solid transparent;
+  color: rgb(131, 80, 146);
+
 }
 
+table td {
+  padding: 10px 35px;
+  border-left: 2px solid #009cd5;
+  border-bottom: 30px solid white;
+}
+
+table td p,
+table td ul {
+  margin-bottom: 0;
+
+}
+
+/* 区切り線 */
 hr {
-  display: block;
   border: 0;
-  border-top: 1px solid rgb(255, 132, 132);
-  border-bottom: 1px solid rgb(255, 130, 58);
-  margin: 1em 0;
+  height: 1px;
+  width: 8%;
+  margin: 80px 0 50px;
   padding: 0;
+  background: rgb(255, 0, 221);
 }
 
-pre,
-code,
-kbd,
-samp {
-  color: #000;
-  font-family: monospace, monospace;
-  _font-family: 'courier new', monospace;
-  font-size: 0.98em;
+
+/* mark em small strong */
+mark {
+  font-style: normal;
+  background: rgba(255, 255, 0, 0.5);
 }
 
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+em {
+  margin: 0 3px;
+  padding: 0 5px;
+  background: rgba(255, 192, 203, 0.3);
+  font-weight: bold;
 }
 
-b,
+small {
+  font-size: 80%;
+}
+
 strong {
   font-weight: bold;
 }
 
-dfn {
-  font-style: italic;
+
+/* pre code figure */
+pre {
+  background: rgb(0, 0, 0);
+  padding: 0.1em;
+  line-height: 1.3;
+  font-size: 1em;
+  font-family: "Source Code Pro", verdana, sans-serif;
+  font-weight: normal;
+
 }
 
-ins {
-  background: #ff9;
-  color: #000;
-  text-decoration: none;
+pre code {
+  padding: 0;
+  background: #103600;
+  border-left: .3em solid #f04aff;
 }
 
-mark {
-  background: #ff0;
-  color: #000;
-  font-style: italic;
-  font-weight: bold;
+code {
+  padding:  .3em .7em .3em .7em;
+  font-family: "Source Code Pro", verdana, sans-serif;
+  font-weight: normal;
+  border-radius: 0.1em;
 }
 
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
+/* figure */
+figure {
+  padding: 1px;
+  margin-left: 0;
+  margin-right: 0;
+  background: #eee;
+}
+
+figure figcaption {
+  margin-bottom: 1px;
+  padding: 5px 15px;
+  background: #eee;
+  font-size: 1.1em;
+  letter-spacing: .1em;
+  text-shadow: 1px 1px 0 white;
+}
+
+figure pre {
+  margin-bottom: 0;
+}
+
+figure pre+figcaption {
+  margin-top: 1px;
+}
+
+
+/* 引用 */
+blockquote {
   position: relative;
-  vertical-align: baseline;
+  margin-bottom: 1.5em;
+  padding: 1.5em 15px 1px 60px;
+  background: #fafafa;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 1em;
 }
 
-sup {
-  top: -0.5em;
+blockquote:before {
+  content: "\"";
+  /* position: absolute;
+  top: -15px;
+  left: 13px; */
+  font-size: 2em;
+  color: rgb(255, 27, 6);
+  font-family: "Source Code Pro", "ＭＳ Ｐゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", "Meiryo", verdana, sans-serif;
 }
 
-sub {
-  bottom: -0.25em;
+
+cite {
+  font-style: italic;
 }
 
-ul,
-ol {
-  margin: 1em 0;
-  padding: 0 0 0 2em;
+iframe {
+  max-width: 100%;
 }
 
-li p:last-child {
-  margin: 0;
+
+/* Latele Blog で使ってるClass */
+.fr,
+.imgR {
+  float: right;
+  margin-left: 30px;
 }
 
-dd {
-  margin: 0 0 0 2em;
+.fl,
+.imgL {
+  float: left;
+  margin-top: 7px;
+  margin-right: 30px;
 }
 
-img {
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-  vertical-align: middle;
+.btn,
+.imgC,
+.tC {
+  text-align: center;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.imgC {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-td {
-  vertical-align: top;
+img.imgC,
+img.imgL,
+img.imgR {
+  margin-bottom: 1.5em;
 }
 
-@media only screen and (min-width: 480px) {
-  body {
-    font-size: 14px;
-  }
+.text {
+  overflow: hidden;
 }
 
-@media only screen and (min-width: 768px) {
-  body {
-    font-size: 16px;
-  }
+.description {
+  clear: both;
+  position: relative;
+  margin: 0 auto 1.5em;
+  padding: 2.5em 20px 1px;
+  border: 1px solid #eee;
+  box-shadow: 2px 2px 0 #eee;
 }
 
-@media print {
-  * {
-    background: transparent !important;
-    color: black !important;
-    filter: none !important;
-    -ms-filter: none !important;
-  }
+.description:before {
+  content: "description";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #eee;
+  padding: 1px 10px;
+  border-radius: 0 0 5px 0;
+  color: #333;
+  font-size: 1em;
+}
 
-  body {
-    font-size: 12pt;
-    max-width: 100%;
-  }
+.note {
+  clear: both;
+  margin: 0 auto 1.5em;
+  padding: 1.5em 20px 1px;
+  background: rgba(255, 255, 0, 0.06);
+  border: 2px solid rgba(255, 165, 0, 0.25);
+  box-shadow: inset 0 0 25px rgba(255, 165, 0, 0.12), inset -1px -1px 0 white, inset 1px 1px 0 white;
+}
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+.btn {
+  clear: both;
+  margin: 2em auto 2.5em;
+  font-size: 1.3em;
+}
 
-  hr {
-    height: 1px;
-    border: 0;
-    border-bottom: 1px solid black;
-  }
+.btn a {
+  position: relative;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 55%;
+  padding: 15px;
+  background: #0076e0;
+  color: rgb(248, 0, 0);
+  text-decoration: none;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1), inset -1px -1px white;
+}
 
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
+.btn a:hover {
+  background: #009cd5;
+  top: 1px;
+  box-shadow: 3px 2px 0 rgba(0, 0, 0, 0.1), inset -1px -1px white
+}
 
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
+.movie,
+.video,
+.youtube {
+  position: relative;
+  margin-bottom: 1.5em;
+  padding-top: 56.25%;
+}
 
-  .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
-    content: "";
-  }
+.movie iframe,
+.video iframe,
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    padding-right: 1em;
-    page-break-inside: avoid;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  @page :left {
-    margin: 15mm 20mm 15mm 10mm;
-  }
-
-  @page :right {
-    margin: 15mm 10mm 15mm 20mm;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+.twitter-tweet {
+  margin-bottom: 1.5em !important;
 }
