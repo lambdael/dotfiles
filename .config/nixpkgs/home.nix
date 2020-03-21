@@ -88,12 +88,12 @@ in{
   programs.neovim={
     enable = true;
     configure = {
-       customRC = ''
-       " here your custom configuration goes!
-       " this is a comment line
-       set number
-       set list
-       set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+      customRC = ''
+      " here your custom configuration goes!
+      " this is a comment line
+      set number
+      set list
+      set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 
        '';
 
@@ -118,7 +118,7 @@ in{
     enable = true;
     allowBold = true;
     audibleBell = true;
-    backgroundColor = "rgba(40, 12, 30, 0.9)";#2b161c
+    backgroundColor = "rgba(40, 12, 30, 0.8)";#2b161c
     browser = "\${pkgs.xdg_utils}/xdg-open";
     clickableUrl=true;
     cursorShape =  "block"; # "block" "ibeam" "underline",
@@ -175,7 +175,7 @@ color19 = #586e75
 color20 = #839496
 color21 = #eee8d5
   '';
-    font = "Source Code Pro 18";
+    font = "Source Code Pro 14";
     hintsBorderWidth =  "0.5";
   };
   #  hintsFont =  "MigMix 2M";#"Monospace 12";
@@ -198,12 +198,17 @@ color21 = #eee8d5
   xsession.windowManager.xmonad.enableContribAndExtras= true;
   # xsession.windowManager.command = "${myXmonad}/src/xmonad-session-rc";
 
-  home.file.".xmonad/xmonad.hs".source = "${myXmonad}/src/xmonad.hs";
-  home.file.".xmonad/xmobarrc.hs".source = "${myXmonad}/src/xmobarrc.hs";
+  home.file.".xmonad/xmonad.hs".source = "${myXmonad}/app/xmonad.hs";
+  home.file.".xmonad/lib/Themes/Tab.hs".source = "${myXmonad}/src/Themes/Tab.hs";
+  home.file.".xmonad/lib/Themes/XP.hs".source = "${myXmonad}/src/Themes/XP.hs";
+  home.file.".xmonad/xmobarrc.hs".source = "${myXmonad}/app/xmobarrc.hs";
+  home.file.".xmonad/xmobarrc2.hs".source = "${myXmonad}/app/xmobarrc2.hs";
   home.file.".xmonad/xmonad-session-rc".source = "${myXmonad}/src/xmonad-session-rc";
   home.file.".config/nixpkgs/config.nix".source = "${dotfiles}/.config/nixpkgs/config.nix";
   # home.file.".config/nixpkgs/home.nix".source = "${dotfiles}/.config/nixpkgs/home.nix";
-  home.file.".config/Code/User".source = "${dotfiles}/.config/Code/User";
+  home.file.".config/Code/User/settings.json".source = "${dotfiles}/.config/Code/User/settings.json";
+  home.file.".config/Code/User/Style.css".source = "${dotfiles}/.config/Code/User/Style.css";
+  # home.file.".config/Code/User".source = "${dotfiles}/.config/Code/User";
   #home.file.".config/ranger/commands.py".source = "${dotfiles}/.config/ranger/commands.py";
   #home.file.".config/ranger/rc.conf".source = "${dotfiles}/.config/ranger/rc.conf";
   # home.file.".config/ranger/rifle.conf".source = "${dotfiles}/.config/ranger/rifle.conf";
