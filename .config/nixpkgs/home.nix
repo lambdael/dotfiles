@@ -175,7 +175,11 @@ color19 = #586e75
 color20 = #839496
 color21 = #eee8d5
   '';
+<<<<<<< HEAD
     font = "Source Code Pro 14";
+=======
+    font = "Source Code Pro 24";
+>>>>>>> 55ec832641be25fff16e0535f859e631f76f9fe0
     hintsBorderWidth =  "0.5";
   };
   #  hintsFont =  "MigMix 2M";#"Monospace 12";

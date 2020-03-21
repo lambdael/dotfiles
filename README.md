@@ -31,6 +31,10 @@ edit [settings.json](./.config/Code/User/settings.json)
 https://code.visualstudio.com/docs/getstarted/tips-and-tricks#vscode
 
 https://code.visualstudio.com/docs/getstarted/settings
+<<<<<<< HEAD
 https://code.visualstudio.com/docs/editor/integrated-terminal
 
 
+=======
+https://code.visualstudio.com/docs/editor/integrated-terminal
+>>>>>>> 55ec832641be25fff16e0535f859e631f76f9fe0

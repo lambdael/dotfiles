@@ -1,6 +1,10 @@
 {
   "window.menuBarVisibility": "toggle",
+<<<<<<< HEAD
   "window.zoomLevel": 2,
+=======
+  "window.zoomLevel": 4,
+>>>>>>> 55ec832641be25fff16e0535f859e631f76f9fe0
   "workbench.iconTheme": "vscode-icons",
   "workbench.colorTheme": "Tomorrow Night Blue",
   "editor.fontSize": 24,
